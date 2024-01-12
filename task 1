@@ -1,1 +1,56 @@
+import java.util.Scanner;
 
+public class OnlineQuizApplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize variables
+        int totalQuestions = 3;
+        int marks = 0;
+
+        // Display welcome message
+        System.out.println("Welcome to the Online Quiz Application!");
+        System.out.println("Please select the correct option for each question.");
+
+        // Question 1
+        System.out.println("\nQuestion 1: What is the capital of Australia?");
+        System.out.println("a) Sydney\nb) Canberra\nc) Melbourne");
+        System.out.print("Your answer: ");
+        char answer1 = scanner.next().charAt(0);
+        if (answer1 == 'b' || answer1 == 'B') {
+            marks += 1;
+        }
+
+        // Question 2
+        System.out.println("\nQuestion 2: Which planet is known as the 'Red Planet'?");
+        System.out.println("a) Mars\nb) Jupiter\nc) Venus");
+        System.out.print("Your answer: ");
+        char answer2 = scanner.next().charAt(0);
+        if (answer2 == 'a' || answer2 == 'A') {
+            marks += 1;
+        }
+
+        // Question 3
+        System.out.println("\nQuestion 3: What is the largest ocean on Earth?");
+        System.out.println("a) Atlantic Ocean\nb) Indian Ocean\nc) Pacific Ocean");
+        System.out.print("Your answer: ");
+        char answer3 = scanner.next().charAt(0);
+        if (answer3 == 'c' || answer3 == 'C') {
+            marks += 1;
+        }
+
+        // Display quiz completion and results
+        System.out.println("\nQuiz Completed!");
+        System.out.println("Your total marks: " + marks + "/" + totalQuestions);
+
+        // Provide feedback
+        if (marks == totalQuestions) {
+            System.out.println("Congratulations! You scored 100%. Well done!");
+        } else {
+            System.out.println("Thanks for taking the quiz. Better luck next time!");
+        }
+
+        // Close scanner
+        scanner.close();
+    }
+}
